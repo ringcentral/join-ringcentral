@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react-subx';
-import {Spin} from 'antd';
+import {Input, Button} from 'antd';
 
 import {StoreType} from './store';
 
@@ -10,7 +10,14 @@ type PropsStore = {
 class App extends Component<PropsStore> {
   render() {
     const store = this.props.store;
-    return <Spin size="large" />;
+    return (
+      <>
+        <Input placeholder="Email Address" type="email" />
+        <Button type="primary" onClick={() => store.invite()}>
+          Invite
+        </Button>
+      </>
+    );
   }
 }
 

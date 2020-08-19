@@ -3,6 +3,7 @@ import RingCentral from '@rc-ex/core';
 
 export type StoreType = {
   ready: boolean;
+  invite: Function;
 };
 
 const rc = new RingCentral({
@@ -13,6 +14,9 @@ const rc = new RingCentral({
 
 const store = SubX.proxy<StoreType>({
   ready: false,
+  invite: () => {
+    console.log('invite');
+  },
 });
 
 export default store;
