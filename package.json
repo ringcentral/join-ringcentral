@@ -1,17 +1,36 @@
 {
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors",
+    "build": "webpack --progress --colors"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "@rc-ex/core": "^0.4.6",
+    "antd": "^4.5.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-subx": "^0.8.2",
+    "subx": "^0.9.14"
+  },
   "devDependencies": {
     "@types/node": "^14.6.0",
+    "@types/react": "^16.9.46",
+    "@types/react-dom": "^16.9.8",
+    "css-loader": "^4.2.1",
+    "dotenv-override-true": "^6.2.1",
+    "eslint-plugin-react": "^7.20.6",
     "gts": "^2.0.2",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^8.0.2",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.7",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
     "yarn-upgrade-all": "^0.5.4"
-  },
-  "scripts": {
-    "check": "gts check",
-    "clean": "gts clean",
-    "compile": "tsc",
-    "fix": "gts fix",
-    "prepare": "yarn run compile",
-    "pretest": "yarn run compile",
-    "posttest": "yarn run check"
   }
 }
