@@ -40,6 +40,7 @@ class App extends Component<PropsStore, StateType> {
             type="primary"
             onClick={() => {
               if (
+                this.state.email.length > 0 &&
                 !this.form
                   .current!.getFieldsError()
                   .some(i => i.errors.length > 0)
