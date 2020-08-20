@@ -14,8 +14,8 @@ const rc = new RingCentral({
 
 const store = SubX.proxy<StoreType>({
   ready: false,
-  invite: () => {
-    console.log('invite');
+  invite: (email: string) => {
+    console.log(`invite ${email}`);
   },
 });
 
