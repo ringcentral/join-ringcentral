@@ -5,6 +5,8 @@ import {Input, Button, Form} from 'antd';
 import {StoreType} from './store';
 import {FormInstance} from 'antd/lib/form';
 
+import RingCentralIcon from './ringcentral.png';
+
 type PropsStore = {
   store: StoreType;
 };
@@ -22,6 +24,7 @@ class App extends Component<PropsStore, StateType> {
     const store = this.props.store;
     return (
       <Form ref={this.form}>
+        <img src={RingCentralIcon} width="128" />
         <Form.Item
           rules={[
             {required: true, message: 'Please input your email!'},
@@ -50,7 +53,13 @@ class App extends Component<PropsStore, StateType> {
             }}
           >
             Invite
-          </Button>
+          </Button>{' '}
+          or{' '}
+          <a
+            href={`https://app.ringcentral.com/messages/${process.env.RINGCENTRAL_TEAM_ID}`}
+          >
+            sign in
+          </a>
         </Form.Item>
       </Form>
     );

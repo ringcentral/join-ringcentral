@@ -22,6 +22,7 @@
     "css-loader": "^4.2.1",
     "dotenv-override-true": "^6.2.1",
     "eslint-plugin-react": "^7.20.6",
+    "file-loader": "^6.0.0",
     "gts": "^2.0.2",
     "html-webpack-plugin": "^4.3.0",
     "style-loader": "^1.2.1",
