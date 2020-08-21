@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react-subx';
-import {Input, Button, Form} from 'antd';
+import {Input, Button, Form, Row, Col, Spin} from 'antd';
 
 import {StoreType} from './store';
 import {FormInstance} from 'antd/lib/form';
@@ -13,7 +13,15 @@ type PropsStore = {
 type StateType = {
   email: string;
 };
-class App extends Component<PropsStore, StateType> {
+
+class App extends Component<PropsStore> {
+  render() {
+    const store = this.props.store;
+    return store.ready ? <Main store={store} /> : <Spin size="large" />;
+  }
+}
+
+class Main extends Component<PropsStore, StateType> {
   form: React.RefObject<FormInstance>;
   constructor(props: PropsStore) {
     super(props);
@@ -23,45 +31,69 @@ class App extends Component<PropsStore, StateType> {
   render() {
     const store = this.props.store;
     return (
-      <Form ref={this.form}>
-        <img src={RingCentralIcon} width="128" />
-        <Form.Item
-          rules={[
-            {required: true, message: 'Please input your email!'},
-            {type: 'email', message: 'Invalid email address!'},
-          ]}
-          name="email"
-        >
-          <Input
-            placeholder="Email Address"
-            type="email"
-            onChange={e => this.setState({email: e.target.value})}
-          />
-        </Form.Item>
-        <Form.Item>
-          <Button
-            type="primary"
-            onClick={() => {
-              if (
-                this.state.email.length > 0 &&
-                !this.form
-                  .current!.getFieldsError()
-                  .some(i => i.errors.length > 0)
-              ) {
-                store.invite(this.state.email);
-              }
-            }}
-          >
-            Invite
-          </Button>{' '}
-          or{' '}
-          <a
-            href={`https://app.ringcentral.com/messages/${process.env.RINGCENTRAL_TEAM_ID}`}
-          >
-            sign in
-          </a>
-        </Form.Item>
-      </Form>
+      <Row className="main-row">
+        <Col span={8} offset={8}>
+          <Form ref={this.form}>
+            <img src={RingCentralIcon} width="128" className="logo-img" />
+
+            <div className="centered-text">
+              Join{' '}
+              <a
+                href={`https://app.ringcentral.com/messages/${process.env.RINGCENTRAL_TEAM_ID}`}
+              >
+                {store.teamName}
+              </a>{' '}
+              on Glip.
+            </div>
+            <div className="centered-text">
+              Currently {store.teamSize} users joined.
+            </div>
+
+            <Form.Item
+              rules={[
+                {required: true, message: 'Please input your email!'},
+                {type: 'email', message: 'Invalid email!'},
+              ]}
+              name="email"
+            >
+              <Input
+                placeholder="Email"
+                type="email"
+                onChange={e => this.setState({email: e.target.value})}
+              />
+            </Form.Item>
+            <Form.Item>
+              <Button
+                type="primary"
+                onClick={() => {
+                  if (
+                    this.state.email.length > 0 &&
+                    !this.form
+                      .current!.getFieldsError()
+                      .some(i => i.errors.length > 0)
+                  ) {
+                    store.invite(this.state.email);
+                  }
+                }}
+              >
+                Invite
+              </Button>{' '}
+              or{' '}
+              <a
+                href={`https://app.ringcentral.com/messages/${process.env.RINGCENTRAL_TEAM_ID}`}
+              >
+                sign in
+              </a>
+            </Form.Item>
+          </Form>
+          <div className="centered-text">
+            If you do not receive an invite shortly please send an email to{' '}
+            <a href="mailto:devsupport@ringcentral.com">
+              devsupport@ringcentral.com
+            </a>
+          </div>
+        </Col>
+      </Row>
     );
   }
 }

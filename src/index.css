@@ -1,1 +1,14 @@
 @import '~antd/dist/antd.css';
+
+.main-row {
+  margin-top: 64px;
+}
+
+.logo-img {
+  display: block;
+  margin: 0 auto 16px auto;
+}
+
+.centered-text {
+  text-align: center;
+}
