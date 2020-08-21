@@ -46,10 +46,6 @@ const store = SubX.proxy<StoreType>({
       'If you are a new RingCentral user, please check your email to setup your account.',
       120
     );
-    message.info(
-      'To get assistance please send an email to devsupport@ringcentral.com',
-      120
-    );
   },
 });
 

@@ -77,6 +77,12 @@ class Main extends Component<PropsStore, StateType> {
               </Button>
             </Form.Item>
           </Form>
+          <div className="centered-text">
+            To get help please send an email to{' '}
+            <a href="mailto:devsupport@ringcentral.com">
+              devsupport@ringcentral.com
+            </a>
+          </div>
         </Col>
       </Row>
     );
