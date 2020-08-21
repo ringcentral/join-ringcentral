@@ -30,6 +30,7 @@ const store = SubX.proxy<StoreType>({
     const groupInfo = r.data as GroupInfo;
     this.teamName = groupInfo.name;
     this.teamSize = groupInfo.members.length;
+    document.title = `Join ${this.teamName} — RingCentral™ Platform`;
   },
   async invite(email: string) {
     await rc

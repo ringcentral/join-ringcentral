@@ -33,7 +33,7 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Invite to RingCentral',
+      title: 'Join RingCentral — RingCentral™ Platform',
     }),
     new DefinePlugin({
       'process.env': JSON.stringify(dotenv.config().parsed),
