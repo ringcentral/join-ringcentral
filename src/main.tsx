@@ -72,11 +72,11 @@ class Main extends Component<PropsStore, StateType> {
                       .current!.getFieldsError()
                       .some(i => i.errors.length > 0)
                   ) {
-                    store.invite(this.state.email);
+                    store.join(this.state.email);
                   }
                 }}
               >
-                Invite
+                Join
               </Button>{' '}
               or{' '}
               <a

@@ -8,7 +8,7 @@ export type StoreType = {
   teamName: string;
   teamSize: number;
   init: Function;
-  invite: Function;
+  join: Function;
 };
 
 export type GroupInfo = {
@@ -32,7 +32,7 @@ const store = SubX.proxy<StoreType>({
     this.teamSize = groupInfo.members.length;
     document.title = `Join ${this.teamName} — RingCentral™ Platform`;
   },
-  async invite(email: string) {
+  async join(email: string) {
     await rc
       .restapi()
       .glip()

@@ -1,3 +1,3 @@
-# Invite to RingCentral
+# Join RingCentral
 
-Provide a page to invite users by email to join a RingCentral chat.
+Provide a page to let users join a RingCentral team chat by email.
