@@ -41,7 +41,15 @@ const store = SubX.proxy<StoreType>({
       .post({
         members: [{email}],
       });
-    message.success('Please ', 0);
+    message.success(`You have been added to "${this.teamName}"!`, 120);
+    message.info(
+      'If you are a new RingCentral user, please check your email to setup your account.',
+      120
+    );
+    message.info(
+      'To get assistance please send an email to devsupport@ringcentral.com',
+      120
+    );
   },
 });
 

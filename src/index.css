@@ -1,7 +1,7 @@
 @import '~antd/dist/antd.css';
 
 .main-row {
-  margin-top: 64px;
+  margin-top: 48px;
 }
 
 .logo-img {
@@ -11,4 +11,14 @@
 
 .centered-text {
   text-align: center;
+}
+
+.centered-block {
+  display: block;
+  margin: 0 auto;
+}
+
+.separator {
+  visibility: hidden;
+  margin-top: 24px;
 }

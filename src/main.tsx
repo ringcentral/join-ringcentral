@@ -37,17 +37,13 @@ class Main extends Component<PropsStore, StateType> {
             <img src={RingCentralIcon} width="128" className="logo-img" />
 
             <div className="centered-text">
-              Join{' '}
-              <a
-                href={`https://app.ringcentral.com/messages/${process.env.RINGCENTRAL_TEAM_ID}`}
-              >
-                {store.teamName}
-              </a>{' '}
-              on Glip.
+              Join &#34;{store.teamName}&#34; on RingCentral app.
             </div>
             <div className="centered-text">
               Currently {store.teamSize} users joined.
             </div>
+
+            <div className="separator"></div>
 
             <Form.Item
               rules={[
@@ -65,6 +61,7 @@ class Main extends Component<PropsStore, StateType> {
             <Form.Item>
               <Button
                 type="primary"
+                className="centered-block"
                 onClick={() => {
                   if (
                     this.state.email.length > 0 &&
@@ -77,21 +74,9 @@ class Main extends Component<PropsStore, StateType> {
                 }}
               >
                 Join
-              </Button>{' '}
-              or{' '}
-              <a
-                href={`https://app.ringcentral.com/messages/${process.env.RINGCENTRAL_TEAM_ID}`}
-              >
-                sign in
-              </a>
+              </Button>
             </Form.Item>
           </Form>
-          <div className="centered-text">
-            If you do not receive an invite shortly please send an email to{' '}
-            <a href="mailto:devsupport@ringcentral.com">
-              devsupport@ringcentral.com
-            </a>
-          </div>
         </Col>
       </Row>
     );
