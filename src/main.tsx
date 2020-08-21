@@ -59,22 +59,26 @@ class Main extends Component<PropsStore, StateType> {
               />
             </Form.Item>
             <Form.Item>
-              <Button
-                type="primary"
-                className="centered-block"
-                onClick={() => {
-                  if (
-                    this.state.email.length > 0 &&
-                    !this.form
-                      .current!.getFieldsError()
-                      .some(i => i.errors.length > 0)
-                  ) {
-                    store.join(this.state.email);
-                  }
-                }}
-              >
-                Join
-              </Button>
+              {store.joining ? (
+                <Spin className="centered-block" size="large" />
+              ) : (
+                <Button
+                  type="primary"
+                  className="centered-block"
+                  onClick={() => {
+                    if (
+                      this.state.email.length > 0 &&
+                      !this.form
+                        .current!.getFieldsError()
+                        .some(i => i.errors.length > 0)
+                    ) {
+                      store.join(this.state.email);
+                    }
+                  }}
+                >
+                  Join
+                </Button>
+              )}
             </Form.Item>
           </Form>
           <div className="centered-text">

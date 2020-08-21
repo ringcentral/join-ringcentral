@@ -9,6 +9,7 @@ export type StoreType = {
   teamSize: number;
   init: Function;
   join: Function;
+  joining: boolean;
 };
 
 export type GroupInfo = {
@@ -23,6 +24,7 @@ const store = SubX.proxy<StoreType>({
   ready: false,
   teamName: '',
   teamSize: 0,
+  joining: false,
   async init() {
     const r = await rc.get(
       `/restapi/v1.0/glip/groups/${process.env.RINGCENTRAL_TEAM_ID}`
@@ -33,6 +35,7 @@ const store = SubX.proxy<StoreType>({
     document.title = `Join ${this.teamName} — RingCentral™ Platform`;
   },
   async join(email: string) {
+    this.joining = true;
     await rc
       .restapi()
       .glip()
@@ -46,6 +49,7 @@ const store = SubX.proxy<StoreType>({
       'If you are a new RingCentral user, please check your email to setup your account.',
       120
     );
+    this.joining = false;
   },
 });
 
