@@ -37,7 +37,15 @@ class Main extends Component<PropsStore, StateType> {
             <img src={RingCentralIcon} width="128" className="logo-img" />
 
             <div className="centered-text">
-              Join &#34;{store.teamName}&#34; on RingCentral app.
+              Join{' '}
+              <a
+                target="_blank"
+                href={`https://app.ringcentral.com/messages/${process.env.RINGCENTRAL_TEAM_ID}`}
+                rel="noreferrer"
+              >
+                {store.teamName}
+              </a>{' '}
+              on RingCentral app.
             </div>
             <div className="centered-text">
               Currently {store.teamSize} users joined.
