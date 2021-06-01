@@ -32,7 +32,7 @@ class Main extends Component<PropsStore, StateType> {
     const store = this.props.store;
     return (
       <Row className="main-row">
-        <Col span={8} offset={8}>
+        <Col span={22} offset={1}>
           <Form ref={this.form}>
             <img src={RingCentralIcon} width="128" className="logo-img" />
 
