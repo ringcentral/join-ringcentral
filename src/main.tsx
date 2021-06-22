@@ -90,9 +90,9 @@ class Main extends Component<PropsStore, StateType> {
             </Form.Item>
           </Form>
           <div className="centered-text">
-            To get help please send an email to{' '}
-            <a href="mailto:devsupport@ringcentral.com">
-              devsupport@ringcentral.com
+            To get help please {' '}
+            <a href="https://developers.ringcentral.com/support/create-case">
+              submit a help ticket with our developer support team
             </a>
           </div>
         </Col>
