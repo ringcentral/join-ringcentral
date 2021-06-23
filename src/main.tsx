@@ -91,7 +91,11 @@ class Main extends Component<PropsStore, StateType> {
           </Form>
           <div className="centered-text">
             To get help please{' '}
-            <a href="https://developers.ringcentral.com/support/create-case">
+            <a
+              href="https://developers.ringcentral.com/support/create-case"
+              target="_blank"
+              rel="noreferrer"
+            >
               submit a help ticket
             </a>
           </div>
