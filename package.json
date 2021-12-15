@@ -2,7 +2,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "webpack serve --progress",
-    "release": "webpack --progress"
+    "release": "webpack --progress --mode production"
   },
   "engines": {
     "node": ">=14"
